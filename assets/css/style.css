@@ -20,6 +20,17 @@ body {
     line-height: 1.5;
 }
 
+.titulo-principal {
+    font-family: "Creepster", system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 5rem;     
+    background: var(--gradiente);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+}
+
 .capa-convite {    
     position: relative;
     display: flex;
@@ -47,21 +58,11 @@ body {
     text-align: center;            
 }
 
-.titulo-capa {
-    font-family: "Creepster", system-ui, sans-serif;
-    font-weight: 400;
-    font-size: clamp(3.5rem, 12vw, 8rem);
-    background: var(--gradiente);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;     
-}
-
 .subtitulo-capa {     
-     font-weight: 700;
-     font-size: clamp(1.75rem, 6vw, 4rem);
-     color: var(--texto-suave);
-     text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 6vw, 4rem);
+    color: var(--texto-suave);
+    text-transform: uppercase;
 }
 
 .texto-capa {    
@@ -109,7 +110,8 @@ body {
 }
 
 .btn-presenca,
-.btn-detalhes {    
+.btn-detalhes,
+.btn-form {    
     font-weight: 400;
     color: var(--fundo);
     font-size: 0.9em;
@@ -125,8 +127,12 @@ body {
 
 .btn-presenca:hover,
 .btn-detalhes:hover,
+.btn-fantasia:hover,
+.btn-form:hover,
 .btn-presenca:focus-visible,
-.btn-detalhes:focus-visible {
+.btn-detalhes:focus-visible,
+.btn-fantasia:focus-visible,
+.btn-form:focus-visible {    
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     filter: brightness(1.1);
@@ -137,35 +143,25 @@ body {
     transform: translateY(-1px);
 }
 
-.detalhes-evento {
-    
-    flex-direction:column;
-    justify-content:space-evenly;
+.detalhes-evento {  
     background-color: var(--fundo);
-    padding: 4rem 1.5rem;   
-}
-
-.titulo-evento {
-    font-family: "Creepster", system-ui, sans-serif;
-    font-weight: 400;
-    text-align: center;
-    font-size: clamp(1rem, 7vw, 3rem);
-    background: var(--gradiente);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;  
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;   
 }
 
 .info-eventos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
     gap: 20px;
     max-width: 1100px;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
-.evento {
+.card-evento {
     background-color: var(--card);
     border-radius:12px;
     display:flex;
@@ -195,9 +191,220 @@ body {
     color: var(--texto-suave);
 }
 
+.inspiracoes-fantasias {
+    background: linear-gradient(0deg, #402659, #402659);
+    padding: 7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap:2rem;
+}
+
+.texto-inspiracoes {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    margin-bottom: 30px;
+}
+
+.info-inspiracoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.card-fantasia {
+    background-color: var(--card);
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    padding: 1.5px 1rem;   
+    align-items:center;
+    min-width: 0; 
+    box-sizing: border-box;
+}
+
+.card-fantasia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0, 0.3);
+}
+
+.inspiracoes-img{
+    font-size: 2.5rem;
+}
+
+.inspiracoes-fantasia {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #ffff; 
+}
+
+.inspiracoes-detalhe {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+}
+
+.concurso-fantasias {
+    background-color:#1d013a;
+    border: 1px solid #f06e42;
+    padding: 3rem 2rem;
+    width: 100%;    
+    box-sizing: border-box;  
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    margin-top:2rem;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-concurso {
+    font-weight: 700;    
+    color:#f06e42;
+}
+
+.texto-concurso {
+    color: var(--texto-suave);
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.btn-concurso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-fantasia {
+    font-weight: 400;    
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--laranja);
+    padding: 5px 20px;
+    text-transform: uppercase;
+    margin-top: 30px;  
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.confirma-presenca {    
+    padding: 7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    
+}
+
+.texto-presenca {    
+    color: var(--texto-suave);
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    background-color: #211e1c; 
+    border: 1px solid #322D2A;
+    border-radius: 12px;   
+    text-align: left;
+    padding: 2rem;
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;           
+}
+
+.formulario label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;       
+}
+
+.formulario input,
+.formulario textarea {
+    background-color:#181616;
+    border: 1px solid #0000;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;  
+    font-size: 0.9rem;
+    color:#fff;      
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--laranja);
+}
+
+.formulario textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.preencher-formulario {
+    width: 100%;
+    max-width: 550px;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.contato-emoji {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition:transform 0.3s ease;
+}
+
+.contato-emoji:hover {
+    transform: scale(1.2);
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;    
+    padding: 30px 0;
+    gap: 10px;
+    border-top: 1px solid #39343E;
+}
+
+.texto-rodape {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.direitos {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.creditos {
+    font-size: 1rem;
+}
 
 /*Responsividade*/
 @media (max-width: 768px) {
+
+    .titulo-principal {
+        font-size: 4rem;
+    }
 
     .btn {
         flex-direction: column;
@@ -206,11 +413,15 @@ body {
 
     .mobile {
         display: block;
+    } 
+
+    .concurso-fantasias {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
     }
 
-    .info-eventos {
-        grid-template-columns: 1fr;
-    }
-
-    
 }
