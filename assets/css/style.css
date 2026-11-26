@@ -111,6 +111,7 @@ body {
 
 .btn-presenca,
 .btn-detalhes,
+.btn-fantasia,
 .btn-form {    
     font-weight: 400;
     color: var(--fundo);
@@ -274,25 +275,6 @@ body {
     color: var(--texto-suave);
     margin-top: 20px;
     font-size: 0.9em;
-}
-
-.btn-concurso {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-fantasia {
-    font-weight: 400;    
-    font-size: 0.9em;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--laranja);
-    padding: 5px 20px;
-    text-transform: uppercase;
-    margin-top: 30px;  
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .confirma-presenca {    
