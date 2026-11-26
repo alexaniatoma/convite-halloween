@@ -119,6 +119,7 @@ body {
     border-radius: 5px;
     border: none;
     background-color: var(--laranja);
+    text-decoration: none;
     padding: 5px 20px;
     text-transform: uppercase;
     margin-right: 10px;
